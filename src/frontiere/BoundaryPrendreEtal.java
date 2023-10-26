@@ -42,6 +42,13 @@ public class BoundaryPrendreEtal {
 		// TODO a completer
 		System.out.println("C'est parfait il me reste un étal pour vous !");
 		System.out.println("Il me faudrait quelque renseignement :");
-		Clavier.entrerEntier("Quel produit souhaitez-vous vendre ?");
+		System.out.println("Quel produit souhaitez-vous vendre ?");
+		String produit = scan.nextLine();
+		int nbProduit = Clavier.entrerEntier("Combien souhaitez-vous en vendre ?");
+		int numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit);
+		if (numeroEtal != -1) {
+			System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'étal n°" + numeroEtal);
+		}
+		;
 	}
 }
