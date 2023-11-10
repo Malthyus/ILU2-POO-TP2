@@ -1,6 +1,6 @@
 package controleur;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -40,16 +40,14 @@ class ControlAfficherVillageTest {
 	void testDonnerNomVillage() {
 		ControlAfficherVillage control = new ControlAfficherVillage(village);
 		String nom = control.donnerNomVillage();
-		boolean b = nom == village.getNom();
-		assertTrue(b);
+		assertEquals(nom, village.getNom());
 	}
 
 	@Test
 	void testDonnerNbEtals() {
 		ControlAfficherVillage control = new ControlAfficherVillage(village);
 		int n = control.donnerNbEtals();
-		boolean b = n == village.donnerNbEtal();
-		assertTrue(b);
+		assertEquals(n, village.donnerNbEtal());
 	}
 
 }
